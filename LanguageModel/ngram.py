@@ -18,7 +18,7 @@ class NGram(object):
         self.sos = sos
         self.eos = eos
 
-    def pad_sentence(self, words):
+    def _pad_sentence(self, words):
         """
         every sentence should add n sos and one eos
         :param words: list -> the sentence words
@@ -26,5 +26,6 @@ class NGram(object):
         eg. I Love china.(n=2)
             <sos> <sos> I Love china. <eos>
         """
-        words = words.append(self.eos)
+        words.append(self.eos)
         return [self.sos] * self.n + words
+
